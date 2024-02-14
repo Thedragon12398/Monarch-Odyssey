@@ -8,6 +8,7 @@ public class StackingManager : MonoBehaviour
 {
     public GameObject[] fallingObject;
     public GameObject life1, life2, life3;
+    public GameObject menuScreen, playButton, continueButton, exitButton;
 
     private float randX = 0;
     private float timer = 0;
@@ -15,24 +16,47 @@ public class StackingManager : MonoBehaviour
     private int winningScore = 25;
     private int lives = 3;
     private bool loseALife = false;
+    private bool gameOver = true;
+    private bool startGame = false;
 
     public Text score;
-    public TMP_Text win;
+    public TMP_Text win, lose;
 
     
     void Update() {
-        InstantiateObjects();
-        TrackScore();
+        if (!startGame && !menuScreen.activeInHierarchy) {
+            startGame = true;
+            gameOver = false;
+        }
+        if (!gameOver) {
+            InstantiateObjects();
+            TrackScore();
+        }
         TrackLives();
     }
 
     private void TrackScore() {
         score.text = "Score: " + StackerMovement.instance.stacked.ToString();
         if (StackerMovement.instance.stacked == winningScore) {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
+            gameOver = true;
             win.gameObject.SetActive(true);
+            playButton.SetActive(false);
+            exitButton.SetActive(false);
+            continueButton.SetActive(true);
+            menuScreen.SetActive(true);
+        }
+        if (lives < 1) {
+            //Time.timeScale = 0;
+            gameOver = true;
+            lose.gameObject.SetActive(true);
+            playButton.SetActive(false);
+            exitButton.SetActive(false);
+            continueButton.SetActive(true);
+            menuScreen.SetActive(true);
         }
     }
+
     /// <summary>
     /// When player loses a life, gradually remove it from the scene
     /// </summary>
@@ -43,6 +67,22 @@ public class StackingManager : MonoBehaviour
             life3.transform.localScale = new Vector3(xScale, yScale);
             if (xScale <= 0) {
                 life3.SetActive(false);
+            }
+        }
+        if (lives < 2 && life2.activeInHierarchy) {
+            float xScale = life2.transform.localScale.x - 4f * Time.deltaTime;
+            float yScale = life2.transform.localScale.y - 4f * Time.deltaTime;
+            life2.transform.localScale = new Vector3(xScale, yScale);
+            if (xScale <= 0) {
+                life2.SetActive(false);
+            }
+        }
+        if (lives < 1 && life1.activeInHierarchy) {
+            float xScale = life1.transform.localScale.x - 4f * Time.deltaTime;
+            float yScale = life1.transform.localScale.y - 4f * Time.deltaTime;
+            life1.transform.localScale = new Vector3(xScale, yScale);
+            if (xScale <= 0) {
+                life1.SetActive(false);
             }
         }
     }
@@ -62,7 +102,7 @@ public class StackingManager : MonoBehaviour
             {
                 fallingObject[i].GetComponent<Physics>().;
             }*/
-            timeUntilNextObject = Random.Range(0.3f, 3f);
+            timeUntilNextObject = Random.Range(0.2f, 2f);
             timer = 0;
         } else {
             timer += Time.deltaTime;
@@ -73,7 +113,7 @@ public class StackingManager : MonoBehaviour
     {
         if (other.gameObject.name == "Acorn 1(Clone)" || other.gameObject.name == "Apple 1(Clone)")
             //prevent backet from being included; layer 3 is basket layer
-            if (other.gameObject.layer != 3) {
+            if (other.gameObject.layer != 3 && !gameOver) {
                 Destroy(other.gameObject);
                 lives--;
             }
