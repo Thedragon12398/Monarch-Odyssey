@@ -20,7 +20,7 @@ public class StackerMovement : MonoBehaviour
         //Changed max clamp value from 250f to 2000f to reach entire screen
         mousePos = Mathf.Clamp(Input.mousePosition.x, 35.5f, 2000f);
 
-        transform.position = Camera.main.ScreenToWorldPoint(new Vector3(mousePos, 50f, 10f));
+        transform.position = Camera.main.ScreenToWorldPoint(new Vector3(mousePos, 100f, 10f));
 
         
     }
