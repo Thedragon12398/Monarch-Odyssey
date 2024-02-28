@@ -8,7 +8,7 @@ public class StackingManager : MonoBehaviour
 {
     public GameObject[] fallingObject;
     public GameObject life1, life2, life3;
-    public GameObject menuScreen, playButton, continueButton, exitButton;
+    public GameObject menuScreen, playButton, continueButton, exitButton, instructionScreen;
 
     private float randX = 0;
     private float timer = 0;
@@ -41,6 +41,7 @@ public class StackingManager : MonoBehaviour
             //Time.timeScale = 0;
             gameOver = true;
             win.gameObject.SetActive(true);
+            instructionScreen.SetActive(false);
             playButton.SetActive(false);
             exitButton.SetActive(false);
             continueButton.SetActive(true);
@@ -50,6 +51,7 @@ public class StackingManager : MonoBehaviour
             //Time.timeScale = 0;
             gameOver = true;
             lose.gameObject.SetActive(true);
+            instructionScreen.SetActive(false);
             playButton.SetActive(false);
             exitButton.SetActive(false);
             continueButton.SetActive(true);
