@@ -11,4 +11,10 @@ public class Menu : MonoBehaviour
     public void ExitGame() {
         SceneManager.LoadScene(2);
     }
+    public void LoadGameScene() {
+        SceneLoader.Load(SceneNames.GameScene);
+    }
+    public void LoadStackingGame() {
+        SceneLoader.Load(SceneNames.StackingGame);
+    }
 }
