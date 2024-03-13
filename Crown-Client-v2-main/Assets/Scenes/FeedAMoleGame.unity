@@ -2597,7 +2597,7 @@ RectTransform:
   m_GameObject: {fileID: 1023860026}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 14.824562, y: 8.317194, z: 0.8851}
+  m_LocalScale: {x: 9.8543, y: 7.561085, z: 0.8851}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1479898094}
@@ -2613,7 +2613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6, y: -3}
+  m_AnchoredPosition: {x: -14, y: 5}
   m_SizeDelta: {x: -1374, y: -722}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1023860028
@@ -2629,7 +2629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.3656106, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2949,7 +2949,7 @@ GameObject:
   - component: {fileID: 1050185637}
   - component: {fileID: 1050185636}
   m_Layer: 0
-  m_Name: Sound Title
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2995,7 +2995,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sound '
+  m_text: Music
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -3536,7 +3536,7 @@ GameObject:
   - component: {fileID: 1324212427}
   - component: {fileID: 1324212426}
   m_Layer: 0
-  m_Name: Music Title
+  m_Name: Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3582,7 +3582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Music
+  m_text: Sound
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
