@@ -914,11 +914,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: d1b2051f-3475-4be7-af7e-0102446b84eb
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: Crown-Client-v2-main
+  organizationId: lesliezeng219
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
