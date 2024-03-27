@@ -25,7 +25,7 @@ public class Donut : MonoBehaviour
 
         if(collide.gameObject.name == "Ground")
         {
-            donut.isKinematic = true;
+            donut.isKinematic = false;
         }
     }
 }
