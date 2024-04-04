@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7726676436080637639}
   - component: {fileID: 4862581264445482414}
   - component: {fileID: 2369110754976997112}
+  - component: {fileID: 6730058244989927461}
   m_Layer: 5
   m_Name: QuickClickButton
   m_TagString: Untagged
@@ -37,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7726676436080637639
 CanvasRenderer:
@@ -120,4 +121,28 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4862581264445482414}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6730058244989927461}
+        m_TargetAssemblyTypeName: QuickButton, Assembly-CSharp
+        m_MethodName: Clicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6730058244989927461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561877675373597739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ff5a77ee305b04aa306278c99c0c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
