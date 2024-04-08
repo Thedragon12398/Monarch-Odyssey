@@ -45,19 +45,26 @@ public class FishManager : MonoBehaviour
                 break;
         }
     }
+    /// <summary>
+    /// Throws the line in the water and changes the state to WaitingForFish
+    /// </summary>
     public void CastLine() {
         currentState = States.WaitingForFish;
         castButton.SetActive(false);
         withdrawButton.SetActive(true);
     }
+    /// <summary>
+    /// Removes the line from the water
+    /// </summary>
     public void WithdrawLine() {
         currentState = States.Inactive;
         withdrawButton.SetActive(false);
         castButton.SetActive(true);
-        //fishTimer = 0;
-        //fishLevel = 0;
         ResetVariables();
     }
+    /// <summary>
+    /// Resets game back to the Inactive state
+    /// </summary>
     public void Continue() {
         continueButton.SetActive(false);
         castButton.SetActive(true);
@@ -65,6 +72,9 @@ public class FishManager : MonoBehaviour
         ResetVariables();
         currentState = States.Inactive;
     }
+    /// <summary>
+    /// Determines how long it takes to hook a fish and what level the fish will be
+    /// </summary>
     void FindFish() {
         if (fishTimer == 0) {
             fishTimer = (float)Random.Range(5, 20);
@@ -106,6 +116,9 @@ public class FishManager : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// Spawns a certain amount of buttons to be clicked to catch the fish
+    /// </summary>
     void ReelingFish() {
         if (reelTimer <= 0 && currentButtons < maxButtons) {
             Instantiate(buttons[Random.Range(0, 2)]).transform.SetParent(canvas.transform, false);
@@ -115,6 +128,9 @@ public class FishManager : MonoBehaviour
             reelTimer -= Time.deltaTime;
         }
     }
+    /// <summary>
+    /// Notifies player that fish has escaped and resets game to Inactive state
+    /// </summary>
     void FishEscaped() {
         if (textTimer == 0) {
             fishText.text = "Fish escaped!";
@@ -131,12 +147,18 @@ public class FishManager : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// Notifies player that the fish has been caught
+    /// </summary>
     void FishCaught() {
         fishText.text = "Caught a level " + fishLevel + " fish!";
         fishText.color = Color.green;
         fishText.gameObject.SetActive(true);
         continueButton.SetActive(true);
     }
+    /// <summary>
+    /// Checks to see if the last button has been clicked and the fish has been caught
+    /// </summary>
     public void ButtonClicked() {
         if (currentButtons >= maxButtons) {
             Debug.Log("Current: " + currentButtons + ", Max: " + maxButtons);
@@ -144,10 +166,16 @@ public class FishManager : MonoBehaviour
             Debug.Log("Caught a level " + fishLevel + " fish!");
         }
     }
+    /// <summary>
+    /// Notifies the player that the fish has escaped
+    /// </summary>
     public void ButtonMissed() {
         currentState = States.FishEscaped;
         Debug.Log("Fish escaped!");
     }
+    /// <summary>
+    /// Resets all variables to default state
+    /// </summary>
     void ResetVariables() {
         fishTimer = 0;
         reelTimer = 0;

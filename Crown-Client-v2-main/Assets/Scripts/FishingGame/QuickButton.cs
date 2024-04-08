@@ -17,7 +17,7 @@ public class QuickButton : FishButton
     }
 
     /// <summary>
-    /// Decrease the button size by a speed constant
+    /// Decreases the button size by a speed constant
     /// </summary>
     void Shrink() {
         xScale -= Time.deltaTime/speedConstant;
