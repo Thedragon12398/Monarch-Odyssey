@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6179112, g: 0.6837491, b: 0.788344, a: 1}
+  m_IndirectSpecularColor: {r: 0.61778885, g: 0.68369037, b: 0.7883228, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -902,7 +902,7 @@ MonoBehaviour:
   fishText: {fileID: 1863146857}
   buttons:
   - {fileID: 4561877675373597739, guid: 236296a1b2358aa488f74b0addc99b1a, type: 3}
-  - {fileID: 4561877675373597739, guid: 236296a1b2358aa488f74b0addc99b1a, type: 3}
+  - {fileID: 6106036361876842007, guid: 37f48c83e03586c44b485ec4e5bec395, type: 3}
   - {fileID: 4561877675373597739, guid: 236296a1b2358aa488f74b0addc99b1a, type: 3}
   canvas: {fileID: 1845649114}
 --- !u!4 &994779033
@@ -1692,8 +1692,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

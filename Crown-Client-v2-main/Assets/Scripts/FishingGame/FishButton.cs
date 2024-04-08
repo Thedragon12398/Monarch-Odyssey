@@ -6,7 +6,8 @@ public class FishButton : MonoBehaviour
 {
     protected GameObject fishManager;
     protected bool successfullyClicked = false;
-    float destroyTimer = 2f;
+    protected float speedConstant = 2f;
+    float destroyTimer = 1f;
 
     private void Awake() {
         SetPosition();
