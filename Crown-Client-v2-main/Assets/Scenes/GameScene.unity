@@ -2978,16 +2978,29 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 20
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Education Building Info: Lorem ipsum dolor sit amet. Et similique omnis
-    in velit dolores et facere impedit. Qui consequatur laborum id nesciunt aliquid
-    quo optio quibusdam in nobis optio eos illum ipsam. Aut laudantium culpa eum
-    molestiae delectus est incidunt tempora ut voluptatibus ipsum ab nisi dolor.'
+  m_Text: 'The Education Building is home to the Darden College of Education and
+    Professional Studies at Old Dominion University (ODU). The five-story building
+    is located on the corner of 43rd Street and Hampton Boulevard at the entrance
+    to the university.
+
+
+    History
+
+    Prior to 2016, the home of the Darden College
+    of Education and Professional Studies was in the old Education Building, now
+    known as Monarch Hall, which opened in the fall of 1969. Due to the outdated
+    facilities in the Education Building and the expansion of its services and programs,
+    the college moved into the New Education Building in the fall of 2016. The 120,000
+    square-foot, LEED Silver Certified building includes collaboration spaces for
+    students, updated classrooms and offices for faculty, multipurpose auditorium
+    on the first floor, labs for the Department of Stem Education and Professional
+    Studies (STEMPS), and a board room on the fifth floor.'
 --- !u!222 &400972832
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3171,7 +3184,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Building Name
+  m_Text: 'Education Building '
 --- !u!222 &404425695
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4489,8 +4502,8 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.99999994}
+  m_AnchoredPosition: {x: 1, y: 160}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &587852697
@@ -5422,7 +5435,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ecfb1a7e14cebc446bc5c7e10493b518, type: 3}
-    m_FontSize: 75
+    m_FontSize: 74
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -5433,7 +5446,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Building Name
+  m_Text: Batten Arts & Letters
 --- !u!222 &812848743
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5986,13 +5999,23 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 20
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "Constant Hall is one of the six buildings that surround Kaufman Mall on
+    the campus of Old Dominion University (ODU). It is located on the east side of
+    the mall between the Visual Arts Building (VAB) and Webb University Center. It
+    is home to the Strome College of Business.\n\nHistory\nDedicated in 1963, the
+    building was originally named J.A.C. Chandler Memorial Hall after Julian Alvin
+    Carroll (J.A.C.) Chandler, the president of the College of William & Mary who
+    helped established the Norfolk Division of the College of William & Mary in 1930.
+    The building originally housed the Business Administration, Math, and Physics
+    Departments. In 1995, the building was renamed Constant Hall after Old Dominion
+    benefactor Theodore \u201CTed\u201D Constant, and a massive renovation and expansion
+    was completed in 2002."
 --- !u!222 &856721211
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6238,7 +6261,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952687176}
-  m_LocalRotation: {x: 0.27232724, y: 3.767938e-10, z: 1.0664229e-10, w: 0.9622047}
+  m_LocalRotation: {x: 0.27232724, y: -3.767938e-10, z: -1.0664229e-10, w: 0.9622047}
   m_LocalPosition: {x: 0, y: 20, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6593,8 +6616,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 956089891}
   m_HandleRect: {fileID: 1130964362}
   m_Direction: 3
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6915,7 +6938,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -150}
+  m_AnchoredPosition: {x: 0, y: -157}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &971530485
@@ -6951,7 +6974,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Constant Hall
 --- !u!222 &971530486
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8127,7 +8150,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Building Name
+  m_Text: "Engineer Systems \nBuilding (ESB)"
 --- !u!222 &1032277729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9250,8 +9273,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1124705611}
   m_HandleRect: {fileID: 1848016396}
   m_Direction: 3
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9818,7 +9841,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0.9999999}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9891,7 +9914,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141515354}
-  m_LocalRotation: {x: 0.2723272, y: 1e-45, z: -0, w: 0.96220475}
+  m_LocalRotation: {x: 0.2723272, y: -3e-45, z: 1e-45, w: 0.96220475}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10945,16 +10968,23 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 20
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Education Building Info: Lorem ipsum dolor sit amet. Et similique omnis
-    in velit dolores et facere impedit. Qui consequatur laborum id nesciunt aliquid
-    quo optio quibusdam in nobis optio eos illum ipsam. Aut laudantium culpa eum
-    molestiae delectus est incidunt tempora ut voluptatibus ipsum ab nisi dolor.'
+  m_Text: "The Alfriend Building, previously known as the Alfriend Chemistry Building,
+    is located between Webb University Center and Mills Godwin Life Sciences Building
+    (MGB) on the campus of Old Dominion University (ODU). The building is named after
+    John S. Alfriend, a member of President Lewis W. Webb, Jr.\u2019s Advisory Board
+    from 1947 to 1962 and president of the Old Dominion Educational Foundation. From
+    1967 to 2021, the Department of Chemistry and Biochemistry had their offices
+    in Alfriend.\n\nHistory\nConstruction on the building began in 1965 and was dedicated
+    in 1967. Prior to 1967, the Department of Chemistry was housed in the old Science
+    Building, now William B. Spong, Jr. Hall. In 2019, construction on the new Chemistry
+    Building began and was completed in time for the start of the Fall 2021 semester.
+    In October 2021, the building\u2019s name was changed to the Alfriend Building."
 --- !u!222 &1320557563
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12493,8 +12523,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1553686683}
   m_HandleRect: {fileID: 1241220379}
   m_Direction: 3
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12940,16 +12970,27 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 20
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Bal Building Info: Lorem ipsum dolor sit amet. Et similique omnis in velit
-    dolores et facere impedit. Qui consequatur laborum id nesciunt aliquid quo optio
-    quibusdam in nobis optio eos illum ipsam. Aut laudantium culpa eum molestiae
-    delectus est incidunt tempora ut voluptatibus ipsum ab nisi dolor.'
+  m_Text: 'The Batten Arts and Letters Building, or BAL for short, is the tallest
+    building at Old Dominion University (ODU) and houses the College of Arts and
+    Letters departments and offices as well as classroom space and computer labs. 
+    It is located off Hampton Boulevard between 44th and 45th Streets.
+
+
+    Hisrtory
+
+    Construction
+    on BAL started in 1971 and was completed in June 1972. Originally named simply
+    the Arts and Letters Building, the nine-story building was renamed the Batten
+    Arts and Letters building in 1976 in honor of Frank Batten, former publisher
+    of the Virginian-Pilot newspaper and the first Rector of the Board of Visitors.
+    To help update the 45-year-old building, a renovation project was completed from
+    2007 to 2008.'
 --- !u!222 &1621187860
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13315,8 +13356,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1687335751}
   m_HandleRect: {fileID: 517427422}
   m_Direction: 3
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14269,7 +14310,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Building Name
+  m_Text: Alfriend Building
 --- !u!222 &1799570565
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15901,16 +15942,23 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 20
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Engineering Building Info: Lorem ipsum dolor sit amet. Et similique omnis
-    in velit dolores et facere impedit. Qui consequatur laborum id nesciunt aliquid
-    quo optio quibusdam in nobis optio eos illum ipsam. Aut laudantium culpa eum
-    molestiae delectus est incidunt tempora ut voluptatibus ipsum ab nisi dolor.'
+  m_Text: "The Engineering Systems Building (ESB) is one of the four buildings dedicated
+    to the Frank Batten College of Engineering and Technology on the campus of Old
+    Dominion University (ODU). The building is located between the Patricia W. and
+    J. Douglas Perry Library and Kaufman Hall.\n\nHistory\nODU held a groundbreaking
+    ceremony for the ESB in October 2012 to as part of the 50th anniversary celebration
+    commemorating the establishment of the School of Engineering at ODU. The 50,000
+    square-foot building houses the Frank Batten College of Engineering and Technology
+    dean\u2019s office, plasma science and laser labs, a dynamic environment simulation
+    lab, a clean room, and four large project studios. Opened in 2014, the building
+    also contains the Engineering Fundamentals Division and the Department of Engineering
+    Management and Systems Engineering.\n"
 --- !u!222 &2099164257
 CanvasRenderer:
   m_ObjectHideFlags: 0
