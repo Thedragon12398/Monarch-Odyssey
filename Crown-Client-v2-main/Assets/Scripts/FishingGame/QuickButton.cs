@@ -32,8 +32,10 @@ public class QuickButton : FishButton
     /// Confirms the button has been clicked; Called on button click event
     /// </summary>
     public void Clicked() {
-        GetComponent<Image>().color = Color.green;
-        successfullyClicked = true;
-        fishManager.GetComponent<FishManager>().ButtonClicked();
+        if (!successfullyClicked) {
+            GetComponent<Image>().color = Color.green;
+            successfullyClicked = true;
+            fishManager.GetComponent<FishManager>().ButtonClicked();
+        }
     }
 }

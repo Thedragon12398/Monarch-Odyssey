@@ -121,7 +121,7 @@ public class FishManager : MonoBehaviour
     /// </summary>
     void ReelingFish() {
         if (reelTimer <= 0 && currentButtons < maxButtons) {
-            Instantiate(buttons[Random.Range(0, 2)]).transform.SetParent(canvas.transform, false);
+            Instantiate(buttons[Random.Range(0, 3)]).transform.SetParent(canvas.transform, false);
             currentButtons++;
             reelTimer = (float)Random.Range(2, 3);
         } else {
