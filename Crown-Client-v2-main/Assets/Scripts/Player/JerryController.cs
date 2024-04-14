@@ -9,6 +9,7 @@ public class JerryController : MonoBehaviour
     public float speed = 0;
     public TextMeshProUGUI scoreText;
     public GameObject winTextObject;
+    public GameObject bookPrefab;
 
     float jumpCooldown = 2.0f;
     float timeSince = 2.0f;
@@ -66,7 +67,7 @@ public class JerryController : MonoBehaviour
     void SetScoreText()
     {
         scoreText.text = "Score: " + score.ToString();
-        if (score >= 4)
+        if (score >= 21)
         {
             winTextObject.SetActive(true);
         }
@@ -83,6 +84,9 @@ public class JerryController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Book"))
         {
+            Vector3 randomSpawnPosition = new Vector3(Random.Range(-8, 9), Random.Range(0.5f, 2), Random.Range(-8, 9));
+            Instantiate(bookPrefab, randomSpawnPosition, Quaternion.Euler(90, 0, 0));
+
             other.gameObject.SetActive(false);
             score = score + 1;
             SetScoreText();
