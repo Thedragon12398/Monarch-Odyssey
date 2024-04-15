@@ -11,8 +11,8 @@ public class JerryController : MonoBehaviour
     public GameObject winTextObject;
     public GameObject bookPrefab;
 
-    float jumpCooldown = 2.0f;
-    float timeSince = 2.0f;
+    public float jumpCooldown = 1.5f;
+    float timeSince = 1.5f;
 
     private Rigidbody rb;
     private int score;

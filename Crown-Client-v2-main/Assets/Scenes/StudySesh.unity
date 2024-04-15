@@ -1616,6 +1616,7 @@ MonoBehaviour:
   scoreText: {fileID: 1135163590}
   winTextObject: {fileID: 2091083805}
   bookPrefab: {fileID: 2025662268}
+  jumpCooldown: 1
 --- !u!114 &1620036079
 MonoBehaviour:
   m_ObjectHideFlags: 0
