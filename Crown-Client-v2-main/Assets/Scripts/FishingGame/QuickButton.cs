@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class QuickButton : FishButton
 {
-    float xScale = 1;
-    float yScale = 1;
+    float xScale = 1f;
+    float yScale = 1f;
 
     private void Update() {
         if (successfullyClicked) {
@@ -16,18 +16,26 @@ public class QuickButton : FishButton
         }
     }
 
+    /// <summary>
+    /// Decreases the button size by a speed constant
+    /// </summary>
     void Shrink() {
-        xScale -= Time.deltaTime/2;
-        yScale -= Time.deltaTime/2;
+        xScale -= Time.deltaTime/speedConstant;
+        yScale -= Time.deltaTime/speedConstant;
         transform.localScale = new Vector2(xScale, yScale);
         if (xScale <= 0) {
             fishManager.GetComponent<FishManager>().ButtonMissed();
             Destroy(this.gameObject);
         }
     }
+    /// <summary>
+    /// Confirms the button has been clicked; Called on button click event
+    /// </summary>
     public void Clicked() {
-        GetComponent<Image>().color = Color.green;
-        successfullyClicked = true;
-        fishManager.GetComponent<FishManager>().ButtonClicked();
+        if (!successfullyClicked) {
+            GetComponent<Image>().color = Color.green;
+            successfullyClicked = true;
+            fishManager.GetComponent<FishManager>().ButtonClicked();
+        }
     }
 }
