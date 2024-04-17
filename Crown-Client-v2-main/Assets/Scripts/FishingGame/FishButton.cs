@@ -21,6 +21,18 @@ public class FishButton : MonoBehaviour
         int xPosition = Random.Range(-300, 300);
         int yPosition = Random.Range(-150, 150);
         transform.position = new Vector2(xPosition, yPosition);
+
+        //To-Do: find a solution to overlapping buttons;
+        //Below is the attempted solution that doesn't quite work
+        Collider2D collider = Physics2D.OverlapCircle(new Vector2(xPosition, yPosition), 100f, LayerMask.GetMask("UI"));
+        while (collider) {
+            if (collider == this.GetComponent<Collider2D>()) break;
+            Debug.Log("Blocked by " + collider.name);
+            xPosition = Random.Range(-300, 300);
+            yPosition = Random.Range(-150, 150);
+            collider = Physics2D.OverlapCircle(new Vector2(xPosition, yPosition), 100f, LayerMask.GetMask("UI"));
+        }
+        transform.position = new Vector2(xPosition, yPosition);
     }
     /// <summary>
     /// Destroys the object after a certain amount of time
@@ -30,5 +42,8 @@ public class FishButton : MonoBehaviour
         if (destroyTimer <= 0) {
             Destroy(this.gameObject);
         }
+    }
+    private void OnDrawGizmos() {
+        Gizmos.DrawWireSphere(transform.position, 50f);
     }
 }
