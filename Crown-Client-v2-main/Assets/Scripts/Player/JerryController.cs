@@ -2,92 +2,94 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
-//from Tom Weiland's networking tutorial: https://www.youtube.com/playlist?list=PLXkn83W0QkfnqsK8I0RAz5AbUxfg3bOQ5
+using TMPro;
 
 public class JerryController : MonoBehaviour
 {
-    public float speed;
-    public float rotationSpeed;
-    public Animator characterAnimator;
-    public GameObject gpsTarget;
-    public InputAction jerryControls;
+    public float speed = 0;
+    public TextMeshProUGUI scoreText;
+    public GameObject winTextObject;
+    public GameObject bookPrefab;
 
-    Vector2 moveDirection = Vector2.zero;
+    public float jumpCooldown = 1.0f;
+    float timeSince = 1.0f;
 
-
-
-    private void Start()
+    private Rigidbody rb;
+    private int score;
+    private float movementX;
+    private float movementY;
+    
+    // Start is called before the first frame update
+    void Start()
     {
-        //this script emulates movement if the game is being tested from Unity Editor
-        //turn off otherwise
+        rb = GetComponent<Rigidbody>(); 
+        score = 0;
 
-        if (!Application.isEditor)
-        {
-            this.enabled = false;
-            return;
-        }
-        else
-        {
-            //gpsTarget.SetActive(false);
-        }
+        SetScoreText();
+        winTextObject.SetActive(false);
     }
 
-
-    private void OnEnable()
+    void Update()
     {
-        jerryControls.Enable();
+        timeSince += Time.deltaTime;
     }
 
-    private void OnDisable()
+    void OnMove(InputValue movementValue)
     {
-        jerryControls.Disable();
-    }
-    private void Update()
-    {
+        Vector2 movementVector = movementValue.Get<Vector2>();
 
-        if (GameManager.instance.returnGameState() != 0)
-        {
-            return;
-        }
-
-        float characterMovement = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        float characterRotation = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
-
-        if (characterMovement > 0)
-        {
-            characterAnimator.SetBool("isMoving", true);
-        }
-        else
-        {
-            characterAnimator.SetBool("isMoving", false);
-        }
-
-        transform.Translate(0, 0, characterMovement);
-        transform.Rotate(0, characterRotation, 0);
-        gpsTarget.transform.position = transform.position;
-
+        movementX = movementVector.x;
+        movementY = movementVector.y;
     }
 
-    //stuff commented out from networking tutorial.
-    //private void FixedUpdate()
+    //public bool IsGrounded()
     //{
-    //at fixed intervals, the client sends all the movement keypresses that players have taken to the server as an array of inputs.
-    //SendInputToServer();
+    //    RaycastHit hit;
+    //    float rayLength = 1.1f; // Adjust based on your character's size
+    //    if (Physics.Raycast(transform.position, Vector3.down, out hit, rayLength))
+    //    {
+    //        return true;
+    //    }
+    //    return false;
     //}
-    /*  //commented out movement stuff because not needed for now
-        private void SendInputToServer()
+
+    void OnJump(InputValue jumpValue)
+    {
+        if(timeSince > jumpCooldown)
         {
-            bool[] _inputs = new bool[]
-            {
-                Input.GetKey(KeyCode.UpArrow),
-                Input.GetKey(KeyCode.DownArrow),
-                Input.GetKey(KeyCode.RightArrow), 
-                Input.GetKey(KeyCode.LeftArrow)
-            };
-
-            ClientSend.PlayerMovement(_inputs);
-
+            rb.AddForce(Vector3.up * 6f, ForceMode.Impulse);
+            timeSince = 0;
         }
-    */
+
+        
+    }
+
+    void SetScoreText()
+    {
+        scoreText.text = "Score: " + score.ToString();
+        if (score >= 21)
+        {
+            winTextObject.SetActive(true);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+
+        rb.AddForce(movement * speed);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Book"))
+        {
+            Vector3 randomSpawnPosition = new Vector3(Random.Range(-8, 9), Random.Range(0.5f, 2), Random.Range(-8, 9));
+            Instantiate(bookPrefab, randomSpawnPosition, Quaternion.Euler(90, 0, 0));
+
+            other.gameObject.SetActive(false);
+            score = score + 1;
+            SetScoreText();
+        }
+    }
 }
