@@ -31,5 +31,8 @@ EditorBuildSettings:
     guid: 285abaa147e1c9c4c8133f2e3374245d
   - enabled: 1
     path: Assets/Scenes/StudySession.unity
+    guid: f2fce336a86fb9a4d9bb788b300476ee
+  - enabled: 1
+    path: Assets/Scenes/OldStudySession.unity
     guid: 7cb93e55befa454419e20452868c6b51
   m_configObjects: {}
