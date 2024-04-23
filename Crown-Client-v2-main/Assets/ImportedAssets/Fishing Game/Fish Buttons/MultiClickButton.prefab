@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 1235098030761558700}
   - component: {fileID: 1235098030761558701}
   - component: {fileID: 1235098030761558702}
+  - component: {fileID: 2065221240420825344}
   m_Layer: 5
   m_Name: MultiClickButton
   m_TagString: Untagged
@@ -379,3 +380,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   innerCircle: {fileID: 1235098030457071625}
   timerImage: {fileID: 1235098028734123004}
+--- !u!58 &2065221240420825344
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235098030761558688}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 13.068848, y: 13.535599}
+  serializedVersion: 2
+  m_Radius: 74.12448

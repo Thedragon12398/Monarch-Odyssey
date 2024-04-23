@@ -15,7 +15,8 @@ public class FishManager : MonoBehaviour
     float reelTimer = 0;
     float textTimer = 0;
     int fishLevel = 0;
-    int maxButtons, currentButtons;
+    internal int maxButtons, currentButtons;
+    internal Dictionary<int, Vector2> buttonLocations;
 
     enum States { 
         Inactive,
@@ -27,6 +28,9 @@ public class FishManager : MonoBehaviour
 
     States currentState = States.Inactive;
 
+    private void Awake() {
+        buttonLocations = new Dictionary<int, Vector2>();
+    }
     private void Update() {
         switch (currentState) {
             case States.WaitingForFish:
@@ -108,7 +112,6 @@ public class FishManager : MonoBehaviour
         if (fishTimer > 0) {
             fishTimer -= Time.deltaTime;
             if (fishTimer <= 0) {
-                Debug.Log("Fish Level: " + fishLevel);
                 currentButtons = 0;
                 maxButtons = Random.Range(7, 13);
                 withdrawButton.SetActive(false);
@@ -161,9 +164,9 @@ public class FishManager : MonoBehaviour
     /// </summary>
     public void ButtonClicked() {
         if (currentButtons >= maxButtons) {
-            Debug.Log("Current: " + currentButtons + ", Max: " + maxButtons);
+            //Debug.Log("Current: " + currentButtons + ", Max: " + maxButtons);
             currentState = States.FishCaught;
-            Debug.Log("Caught a level " + fishLevel + " fish!");
+            //Debug.Log("Caught a level " + fishLevel + " fish!");
         }
     }
     /// <summary>
@@ -171,7 +174,6 @@ public class FishManager : MonoBehaviour
     /// </summary>
     public void ButtonMissed() {
         currentState = States.FishEscaped;
-        Debug.Log("Fish escaped!");
     }
     /// <summary>
     /// Resets all variables to default state
