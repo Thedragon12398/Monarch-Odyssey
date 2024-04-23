@@ -15,7 +15,8 @@ public class FishManager : MonoBehaviour
     float reelTimer = 0;
     float textTimer = 0;
     int fishLevel = 0;
-    int maxButtons, currentButtons;
+    internal int maxButtons, currentButtons;
+    internal Dictionary<int, Vector2> buttonLocations;
 
     enum States { 
         Inactive,
@@ -27,6 +28,9 @@ public class FishManager : MonoBehaviour
 
     States currentState = States.Inactive;
 
+    private void Awake() {
+        buttonLocations = new Dictionary<int, Vector2>();
+    }
     private void Update() {
         switch (currentState) {
             case States.WaitingForFish:

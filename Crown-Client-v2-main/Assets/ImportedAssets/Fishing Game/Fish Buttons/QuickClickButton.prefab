@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4862581264445482414}
   - component: {fileID: 2369110754976997112}
   - component: {fileID: 6730058244989927461}
-  - component: {fileID: 723210472675854854}
+  - component: {fileID: 1809958005230063363}
   m_Layer: 5
   m_Name: QuickClickButton
   m_TagString: Untagged
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ff5a77ee305b04aa306278c99c0c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &723210472675854854
+--- !u!58 &1809958005230063363
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,9 +157,9 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 51.76
