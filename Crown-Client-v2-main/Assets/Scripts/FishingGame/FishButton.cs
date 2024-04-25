@@ -19,14 +19,14 @@ public class FishButton : MonoBehaviour
         SetPosition();
     }
     /// <summary>
-    /// Places the button at a random position on the canvas
+    /// Places the button at a random position on the canvas; reses location if it is too close to another button
     /// </summary>
     void SetPosition() {
         xPosition = Random.Range(-300, 300);
         yPosition = Random.Range(-150, 150);
         Vector2 location = new Vector2(xPosition, yPosition);
 
-        //For each button in the buttonLocations dictionary, if this button is within 5 units of one reset its position
+        //For each button in the buttonLocations dictionary, if this button is within 150 units of one reset its position
         if (fishManager.GetComponent<FishManager>().buttonLocations.Count > 0) {
             foreach (Vector2 loc in fishManager.GetComponent<FishManager>().buttonLocations.Values.ToList()) {
                 if (Vector2.Distance(loc, location) < 150) {
@@ -36,20 +36,8 @@ public class FishButton : MonoBehaviour
         }
         if (!fishManager.GetComponent<FishManager>().buttonLocations.ContainsKey(buttonNum)) {
             fishManager.GetComponent<FishManager>().buttonLocations.Add(buttonNum, location);
-
         }
-        transform.position = new Vector2(xPosition, yPosition);
-
-        //To-Do: find a solution to overlapping buttons;
-        //Below is the attempted solution that doesn't quite work
-        /*Collider[] collider = Physics.OverlapSphere(new Vector2(xPosition, yPosition), 100f, LayerMask.GetMask("UI"));
-        while (collider.Length > 0) {
-            Debug.Log("Blocked");
-            xPosition = Random.Range(-300, 300);
-            yPosition = Random.Range(-150, 150);
-            collider = Physics.OverlapSphere(new Vector2(xPosition, yPosition), 100f, LayerMask.GetMask("UI"));
-        }
-        transform.position = new Vector2(xPosition, yPosition);*/
+        transform.position = location;
     }
     /// <summary>
     /// Destroys the object after a certain amount of time
