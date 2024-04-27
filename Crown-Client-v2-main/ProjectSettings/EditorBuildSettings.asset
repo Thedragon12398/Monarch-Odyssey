@@ -17,13 +17,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TeamsMenu.unity
     guid: ccecbaa3606c5774b80e74273daaed7f
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/DefaultCapture.unity
     guid: 72848c806b0f6714fabdfe570397fb1f
   - enabled: 1
     path: Assets/Scenes/CritterEncounter.unity
     guid: a513ce05ac9bfff42b9848a9308c4757
+  - enabled: 1
+    path: Assets/Scenes/FeedAMoleGame.unity
+    guid: e4079571e638b004386be3e51c1cc365
+  - enabled: 1
+    path: Assets/Scenes/StackingGame.unity
+    guid: 285abaa147e1c9c4c8133f2e3374245d
+  - enabled: 1
+    path: Assets/Scenes/StudySession.unity
+    guid: f2fce336a86fb9a4d9bb788b300476ee
+  - enabled: 1
+    path: Assets/Scenes/OldStudySession.unity
+    guid: 7cb93e55befa454419e20452868c6b51
   m_configObjects: {}

@@ -14,7 +14,9 @@ public enum SceneNames
     CritterEncounter,
     DefaultCapture,
     LoadingScene,
-    TeamScene
+    TeamScene,
+    StackingGame,
+    StudySession
 }
 public static class SceneLoader 
 {

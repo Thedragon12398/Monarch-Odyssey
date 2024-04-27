@@ -14,11 +14,14 @@ TagManager:
   - Triangle
   - Building
   - QuestMarker
+  - FishManager
+  - Book
+  - Gound
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Basket
   - Water
   - UI
   - 
